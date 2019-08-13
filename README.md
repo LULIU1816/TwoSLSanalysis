@@ -10,7 +10,7 @@ It is easy to install the development version of TwoSLSanylsis package using the
 ```
 # install.packages("devtools")
 library(devtools)
-install_github("LULU1816/TwoSLSanylsis")
+install_github("LULIU1816/TwoSLSanylsis")
 ```
 
 
