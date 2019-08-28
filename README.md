@@ -16,15 +16,27 @@ install_github("LULIU1816/TwoSLSanylsis")
 
 # Usage
 
-The main function is *TwoSLSanylsis* for two stage analysis of cancer (eg.Lung adenocarcinoma (LUAD)) individual level data downloaded from TCGA, other functions "casecontrolfunction" which has a 1:1 case-control gene expression data, "edgeRfunction" which performs a differentially expressed genes analysis required edgeR package,""  The difference between *TwoSLSanylsisLUAD* and *TwoSLSanylsisLUSC* is the exsitance of repeated measures data of LUAD methylation. Thus, concrete analysis should be made according to concrete circumstance. Moreover,  *TwoSLSanylsisLUSC* is the general function in other cancer analysis. You can find the instructions by '?TwoSLSanylsisLUAD' and '?TwoSLSanylsisLUSC'. 
+The main function is *TwoSLSanylsis* for two stage analysis of cancer (eg.Lung adenocarcinoma (LUAD)) individual level data downloaded from TCGA, other functions *casecontrolfunction* which has a 1:1 case-control gene expression data; *edgeRfunction* which performs a differentially expressed genes analysis required edgeR package; *ChAMPfunction* which performs a differentially methylated genes analysis required ChAMP package; *selectmethysample*, *selectexpressionsample* which selects the tumor and normal tissues in methylation and expression respectively; *overlapaverage* which averages the repeated measures data of LUAD methylation if exisit, and concrete analysis should be made according to concrete circumstance; *clinicalfunction* which performs clinical data such as transforming one type of data to another; *stage1function* which obtains predictions of the first stage with the advantage of fast computation and memory release.  Moreover, you can find the instructions by '?TwoSLSanylsis','?casecontrolfunction' and so on. 
 
 library(TwoSLSanylsis)
+?TwoSLSanylsis
+?casecontrolfunction
+?edgeRfunction
+?ChAMPfunction
+?selectmethysample
+?selectexpressionsample
+?overlapaverage
+?clinicalfunction
+?stage1function
 
-?TwoSLSanylsisLUAD
-
-?TwoSLSanylsisLUSC
 
 # Example
+#load required R packages
+library("newpackage")
+library("data.table")
+library("edgeR")
+library("ChAMP")
+library("survival")
 
 #read clinical data
 clinical<-fread("nationwidechildrens.org_clinical_patient_lusc.txt",data.table=F,head=T)
@@ -43,7 +55,7 @@ data_methy <- as.data.frame(data_methy)[,-c(2,3,4)]
 #configure path of GDC data
 testDir = "~/GDCdata"
 
-LUSCresult <-TwoSLSanalysisLUSC(clinical,data_normalized,data_count,data_methy,testDir) 
+result <-TwoSLSanalysis(clinical, data_normalized, data_count, data_methy, testDir) 
 
 
 # Development
