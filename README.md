@@ -16,7 +16,7 @@ install_github("LULIU1816/TwoSLSanylsis")
 
 # Usage
 
-The main functions is *TwoSLSanylsisLUAD* for Lung adenocarcinoma (LUAD) individual level data, and *TwoSLSanylsisLUSC* for Lung squamous cell carcinoma (LUSC) individual level data. The difference between *TwoSLSanylsisLUAD* and *TwoSLSanylsisLUSC* is the exsitance of repeated measures data of LUAD methylation. Thus, concrete analysis should be made according to concrete circumstance. Moreover,  *TwoSLSanylsisLUSC* is the general function in other cancer analysis. You can find the instructions by '?TwoSLSanylsisLUAD' and '?TwoSLSanylsisLUSC'. 
+The main function is *TwoSLSanylsis* for two stage analysis of cancer (eg.Lung adenocarcinoma (LUAD)) individual level data downloaded from TCGA, other functions "casecontrolfunction" which has a 1:1 case-control gene expression data, "edgeRfunction" which performs a differentially expressed genes analysis required edgeR package,""  The difference between *TwoSLSanylsisLUAD* and *TwoSLSanylsisLUSC* is the exsitance of repeated measures data of LUAD methylation. Thus, concrete analysis should be made according to concrete circumstance. Moreover,  *TwoSLSanylsisLUSC* is the general function in other cancer analysis. You can find the instructions by '?TwoSLSanylsisLUAD' and '?TwoSLSanylsisLUSC'. 
 
 library(TwoSLSanylsis)
 
