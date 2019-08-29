@@ -1,4 +1,4 @@
-edgeRfunction <- function(case_control_data){
+edgeRfunction <- function(case_control_data,fdr=0.001,logfc=2.5,logcpm=2.5){
   group <- factor(c(rep("H", (ncol(case_control_data) - 1)/2), rep("M", (ncol(case_control_data) - 1)/2)))
 # remove genes with low expression
 case_control_data1 <- case_control_data[rowSums(cpm(case_control_data[, 2:ncol(case_control_data)]) > 1) >= 2, ]
@@ -13,14 +13,13 @@ exprSet <- estimateTagwiseDisp(exprSet)
 ## different expression gene(DEG)
 et <- exactTest(exprSet)
 tTag <- topTags(et, n = nrow(exprSet))
-diff_gene_edgeR <- subset(tTag$table, FDR < 0.001 & (logFC > 2.5 | logFC < -2.5) & (logCPM > 2.5 | logCPM < -2.5))
+diff_gene_edgeR <- subset(tTag$table, FDR < fdr & (logFC > logfc | logFC < -logfc) & (logCPM > logcpm | logCPM < -logcpm))
 diff_gene <- diff_gene_edgeR[, 1]
 w <- gregexpr("\\|", diff_gene)
 p <- NULL
 for (i in 1:length(diff_gene)) {
   p[i] <- substr(diff_gene[i], 1, w[[i]][1] - 1)
 }
-diff_gene <- p
-diff_gene_edgeR[, 1] <- diff_gene
+diff_gene_edgeR[, 1] <- p
 return(diff_gene_edgeR)
 }
