@@ -42,7 +42,7 @@ library(TwoSLSanaylsis)
 # Example
 #load required R packages
 
-library("newpackage")
+library("TwoSLSanalysis")
 
 library("data.table")
 
