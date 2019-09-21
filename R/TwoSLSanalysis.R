@@ -51,6 +51,9 @@ TwoSLSanalysis <- function(clinical, data_normalized, data_count, data_methy, te
     if( dim(expressionLUAD)[2]!=dim(methylationLUAD)[2]+1){
       methylationLUAD <- overlapaverage(CpG,methylationLUAD)
     }
+    else{
+      methylationLUAD <- cbind(CpG,methylationLUAD)
+    }
     # sample in order
     expressionLUAD <- expressionLUAD[, order(expressionLUAD[1, ])]
     gene <- expressionLUAD[, 1]
