@@ -12,7 +12,7 @@
 TwoSLSanalysis <- function(clinical, data_normalized, data_count, data_methy, testDir,fdr=0.001,logfc=2.5,logcpm=2.5,cores=1) {
 
     # structure case-control data
-    case_control_data <- casecontrolfunction(data_count,data_tumor)
+    case_control_data <- casecontrolfunction(data_count)
     # edgeR
     diff_gene_edgeR <- edgeRfunction(case_control_data)
     diff_gene <- diff_gene_edgeR[,1]
