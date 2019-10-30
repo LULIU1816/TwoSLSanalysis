@@ -1,4 +1,4 @@
-casecontrolfunction <- function(data_count,data_tumor){
+casecontrolfunction <- function(data_count){
   data_count <- data_count[, data_count[1, ] != "scaled_estimate"][-1, ]
   sampleID_count <- colnames(data_count)[-1]
   # leave sample 11B out
