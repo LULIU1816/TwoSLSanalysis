@@ -17,7 +17,7 @@ install_github("LULIU1816/TwoSLSanalysis")
 # Usage
 
 The main function is *TwoSLSanalysis* for two stage analysis of cancer (eg.Lung adenocarcinoma (LUAD)) individual level data downloaded from TCGA, other functions *casecontrolfunction* which has a 1:1 case-control gene expression data; *edgeRfunction* which performs a differentially expressed genes analysis required edgeR package; *ChAMPfunction* which performs a differentially methylated genes analysis required ChAMP package; *selectmethysample*, *selectexpressionsample* which selects the tumor and normal tissues in methylation and expression respectively; *overlapaverage* which averages the repeated measures data of LUAD methylation if exisit, and concrete analysis should be made according to concrete circumstance; *clinicalfunction* which performs clinical data such as transforming one type of data to another; *stage1function* which obtains predictions of the first stage with the advantage of fast computation and memory release.  Moreover, you can find the instructions by '?TwoSLSanalysis','?casecontrolfunction' and so on. 
-
+```R
 library(TwoSLSanaylsis)
 
 ?TwoSLSanalysis
@@ -37,7 +37,7 @@ library(TwoSLSanaylsis)
 ?clinicalfunction
 
 ?stage1function
-
+```
 
 # Example
 ```
