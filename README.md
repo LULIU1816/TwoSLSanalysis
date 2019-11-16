@@ -40,6 +40,8 @@ library(TwoSLSanaylsis)
 
 
 # Example
+```
+
 #load required R packages
 
 library("TwoSLSanalysis")
@@ -78,3 +80,4 @@ result <-TwoSLSanalysis(clinical, data_normalized, data_count, data_methy, testD
 
 # Development
 This R package is developed by Lu Liu.
+```
